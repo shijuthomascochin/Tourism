@@ -1,0 +1,16 @@
+   
+                dt = objdb.getRecord("select adm_passwd from Admin_Hotel where adm_id= '" + t2.Value + "'");
+                foreach (DataRow dr in dt.Rows)
+                {
+
+                    if (dr["ad_passwd"].ToString().Trim().Equals(t2.Value))
+                    {
+                        Response.Redirect("htladminpage.aspx");
+                    }
+                    else
+                    {
+                          l1.Text = "User id or password do not match";
+                    }
+                }
+                 l1.Text = "User id or password do not match";
+            }
